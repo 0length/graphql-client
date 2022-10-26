@@ -4,11 +4,14 @@ namespace Zerolength\Graphql\Helpers;
 
 use Zerolength\Graphql\Entity\GraphqlQueriesOptions;
 
-class GraphqlClientOptions implements GraphqlQueriesOptions
+class GraphqlClientOptions extends GraphqlQueriesOptions
 {
-  public string $name = "";
+  /**
+   * Graphql workspace endpoint
+   */
   public string $url = "";
-  public string $query = "";
-  public array $variables = [];
+  /**
+   * Http headers
+   */
   public array $headers = [];
 }
