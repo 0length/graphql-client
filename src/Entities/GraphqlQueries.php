@@ -12,12 +12,12 @@ class GraphqlQueries
 
     public function __construct()
     {
-        $this->client = new GraphqlClient();
-        $this->payload = new GraphqlQueriesOptions();
         $options = new GraphqlClientOptions();
         $options->url = config("graphql.workspace");
         $options->headers = config("graphql.headers");
-        $this->client->setOption($options);
+        $this->client = new GraphqlClient($options);
+        $this->payload = new GraphqlQueriesOptions();
+         //  Todo: create config to trun on debug
     }
 
     public function setPayload($name, $variables, $query)

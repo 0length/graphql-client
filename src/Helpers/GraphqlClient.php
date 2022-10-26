@@ -8,7 +8,7 @@ class GraphqlClient
     protected $defaultHeaders = ['Content-Type: application/json', 'User-Agent: 0length-minimal-GraphQL-client/1.0'];
     protected $option;
 
-    public function __construct(?GraphqlClientOptions $option = new GraphqlClientOptions())
+    public function __construct(?GraphqlClientOptions $option)
     {
         $this->setOption($option);
     }
@@ -36,7 +36,7 @@ class GraphqlClient
     /**
      * Instead __construct, to set $this->option value for specified key option for reuseable instance. But, without reconstruction.
      */
-    public function setOption(GraphqlClientOptions $option = new GraphqlClientOptions())
+    public function setOption(GraphqlClientOptions $option)
     {
         $this->option = [
             "url" => $option->url,
@@ -51,7 +51,7 @@ class GraphqlClient
      * Instead __construct and $this->setOption, to set $this->option value for specified key option for reuseable instance WITH execution query.
      *
      */
-    public function run(GraphqlClientOptions $option = new GraphqlClientOptions())
+    public function run(GraphqlClientOptions $option)
     {
         $this->setOption($option);
         try {
