@@ -1,0 +1,23 @@
+{
+	"version": "1.0.0",
+	"name": "0length/graphql-client",
+	"description": "Minial Graphql Http client for Laravel.",
+	"license": "MIT",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Bernardus Fajar",
+			"email": "fajarjunyor13@gmail.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"illuminate/support": "5.8.*|^6|^7|^8|^9"
+	},
+	"autoload": {
+		"psr-4": {
+			"Zerolength\\Graphql\\": "src"
+		}
+	}
+}
