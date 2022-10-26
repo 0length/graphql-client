@@ -2,6 +2,8 @@
 
 namespace Zerolength\Graphql\Helpers;
 
+use Zerolength\Graphql\Entities\GraphqlQueriesOptions;
+
 class GraphqlClient
 {
 
@@ -29,7 +31,6 @@ class GraphqlClient
             $error = error_get_last();
             throw new \ErrorException($error['message'], $error['type']);
         }
-
         return json_decode($data, true);
     }
 
@@ -40,22 +41,19 @@ class GraphqlClient
     {
         $this->option = [
             "url" => $option->url,
-            "query" =>  $option->query,
-            "variables" =>  $option->variables,
             "headers" => array_merge($option->headers, $this->defaultHeaders)
         ];
         return $this->option;
     }
 
     /**
-     * Instead __construct and $this->setOption, to set $this->option value for specified key option for reuseable instance WITH execution query.
+     * execution payload`.
      *
      */
-    public function run(GraphqlClientOptions $option)
+    public function run(GraphqlQueriesOptions $option)
     {
-        $this->setOption($option);
         try {
-            return $this->call($this->option["url"], $this->option["query"], $this->option["variables"], $this->option["headers"]);
+            return $this->call($this->option["url"], $option->query, $option->variables, $this->option["headers"]);
         } catch (\Throwable $th) {
             throw new \Exception($th);
         }
