@@ -25,7 +25,7 @@ class GraphqlServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind("graphql-client", \Zerolength\Graphql\Helper\GraphqlClient::class);
+        $this->app->bind("graphql-client", \Zerolength\Graphql\Helpers\GraphqlClient::class);
         $this->app->bind("graphql-query", \Zerolength\Graphql\Entities\GraphqlQueries::class);
     }
 }

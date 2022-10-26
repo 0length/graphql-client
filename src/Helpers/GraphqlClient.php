@@ -2,8 +2,6 @@
 
 namespace Zerolength\Graphql\Helpers;
 
-use Zerolength\Graphql\Entities\GraphqlQueriesOptions;
-
 class GraphqlClient
 {
 
@@ -53,7 +51,7 @@ class GraphqlClient
      * Instead __construct and $this->setOption, to set $this->option value for specified key option for reuseable instance WITH execution query.
      *
      */
-    public function run(GraphqlClientOptions|GraphqlQueriesOptions $option = new GraphqlClientOptions())
+    public function run(GraphqlClientOptions $option = new GraphqlClientOptions())
     {
         $this->setOption($option);
         try {

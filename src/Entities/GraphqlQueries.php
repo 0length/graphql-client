@@ -14,7 +14,6 @@ class GraphqlQueries
     {
         $this->client = new GraphqlClient();
         $this->payload = new GraphqlQueriesOptions();
-         //  Todo: create config to trun on debug
         $options = new GraphqlClientOptions();
         $options->url = config("graphql.workspace");
         $options->headers = config("graphql.headers");

@@ -2,7 +2,7 @@
 
 namespace Zerolength\Graphql\Helpers;
 
-use Zerolength\Graphql\Entity\GraphqlQueriesOptions;
+use Zerolength\Graphql\Entities\GraphqlQueriesOptions;
 
 class GraphqlClientOptions extends GraphqlQueriesOptions
 {

@@ -7,13 +7,13 @@ class GraphqlQueriesOptions {
     /**
      * Property key name on result data
      */
-    public string $name;
+    public string $name = "";
     /**
      * Variable to be use on query with operation name
      */
-    public array $variables;
+    public array $variables = [];
     /**
      * Query of Graphql
      */
-    public string $query;
+    public string $query = "";
 }
