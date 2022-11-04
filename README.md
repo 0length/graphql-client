@@ -8,7 +8,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "0length/graphql-client": "^1.0"
+        "0length/graphql-client": "^2.0"
     }
 }
 ```
