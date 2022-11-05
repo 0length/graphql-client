@@ -70,6 +70,6 @@ class CSQueries extends GraphqlQueries
 ## Example Query Class Call/Usage
 
 ```php
-$sessionCreationResponse = new CSQueries()->createSession($cs);
+$sessionCreationResponse = (new CSQueries())->createSession($cs);
 ```
 
