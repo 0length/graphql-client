@@ -21,12 +21,19 @@ Then open your Laravel config file config/app.php and in the `$providers` array 
 \Zerolength\Graphql\GraphqlServiceProvider::class
 ```
 
-Finally generate the configuration file running in the console:
+Generate the configuration file running in the console:
 ```
 php artisan vendor:publish --tag=config
 ```
 
-## Example
+Finally add your graphql server endpoint url and headers option as following example below:
+
+```
+GRAPHQL_WORKSPACE="http://127.0.0.1:4001/graphql"
+GRAPHQL_HEADERS="Authorization: App keyxxx,Header2: value"
+```
+
+## Example Query Class Creation
 ```php
 <?php
 
@@ -59,3 +66,10 @@ class CSQueries extends GraphqlQueries
     }
 }
 ```
+
+## Example Query Class Call/Usage
+
+```php
+$sessionCreationResponse = new CSQueries()->createSession($cs);
+```
+
