@@ -40,21 +40,21 @@ GRAPHQL_HEADERS="Authorization: App keyxxx,Header2: value"
 namespace App\Graphql\Queries;
 
 use App\Graphql\GraphqlQueries;
-use App\Models\CS;
+use App\Models\User;
 
 class CSQueries extends GraphqlQueries
 {
 
 
     /**
-     * Generate privately subscription session key for CS.
+     * Generate privately subscription session key for User.
      */
-    public function createSession(CS $cs)
+    public function createSession(User $user)
     {
         $this->setPayload(
             __FUNCTION__,
             [
-                'data' => $cs
+                'data' => $user
             ],
             '
                 query ' . __FUNCTION__ . 'Operation($data: SessionDataInput!){
@@ -70,6 +70,6 @@ class CSQueries extends GraphqlQueries
 ## Example Query Class Call/Usage
 
 ```php
-$sessionCreationResponse = (new CSQueries())->createSession($cs);
+$sessionCreationResponse = (new CSQueries())->createSession($user);
 ```
 
