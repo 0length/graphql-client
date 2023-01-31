@@ -23,6 +23,6 @@ class GraphqlResponse
             }
         }
         $this->net_error = $arg['net_error'];
-        $this->data = $arg['data'];
+        $this->data = $arg['data']??[];
     }
 }
