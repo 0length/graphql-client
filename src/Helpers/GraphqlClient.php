@@ -20,7 +20,7 @@ class GraphqlClient
      */
     public static function call(string $endpoint, string $query, array $variables = [], array $headers): array
     {
-        $data = [];
+        $data = json_encode([]);
         if (false === $data = @file_get_contents($endpoint, false, stream_context_create([
             'http' => [
                 'method' => 'POST',
@@ -28,7 +28,7 @@ class GraphqlClient
                 'content' => json_encode(['query' => $query, 'variables' => $variables]),
             ]
         ]))) {
-            $data = ['net_error'=>error_get_last()];
+            $data = json_encode(['net_error'=>error_get_last()]);
         }
         return json_decode($data, true);
     }
