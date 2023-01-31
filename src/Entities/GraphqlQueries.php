@@ -36,7 +36,7 @@ class GraphqlQueries
     {
         try {
             $response = new GraphqlResponse($this->client->run($this->payload));
-            if(isset($response->data[$this->payload->name]) && $response->data[$this->payload->name])
+            if($response->data && isset($response->data[$this->payload->name]) && $response->data[$this->payload->name])
             return $response->data[$this->payload->name];
             if(isset($response->net_error) && $response->net_error)
             return [];
