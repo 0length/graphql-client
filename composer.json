@@ -1,5 +1,5 @@
 {
-	"version": "v2.0.1.2-stable",
+	"version": "v2.0.1.3-stable",
 	"name": "0length/graphql-client",
 	"description": "The good and minimal Graphql Http client for Laravel.",
 	"license": "MIT",
