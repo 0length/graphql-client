@@ -22,7 +22,9 @@ class GraphqlResponse
                 $this->errors[implode(':',  $item['path'])] = $item['message'];
             }
         }
-        $this->net_error = $arg['net_error'];
+        if(isset($arg['net_error'])){
+            $this->net_error = $arg['net_error'];
+        }
         $this->data = $arg['data']??[];
     }
 }
