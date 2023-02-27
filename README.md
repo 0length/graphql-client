@@ -39,7 +39,7 @@ GRAPHQL_HEADERS="Authorization: App keyxxx,Header2: value"
 
 namespace App\Graphql\Queries;
 
-use App\Graphql\GraphqlQueries;
+use Zerolength\Graphql\Entities\GraphqlQueries;
 use App\Models\User;
 
 class CSQueries extends GraphqlQueries
